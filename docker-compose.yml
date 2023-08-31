@@ -58,7 +58,7 @@ services:
     image: rabbitmq:alpine
 
   txs-web:
-    image: safeglobal/safe-transaction-service:${TXS_VERSION}
+    image: shyft-txs:1
     env_file:
       - container_env_files/txs.env
     environment:
@@ -74,7 +74,7 @@ services:
     command: docker/web/run_web.sh
 
   txs-worker-indexer: &txs-worker
-    image: safeglobal/safe-transaction-service:${TXS_VERSION}
+    image: shyft-txs:1
     env_file:
       - container_env_files/txs.env
     environment:
@@ -121,7 +121,7 @@ services:
 
   # Safe Config Service
   cfg-web:
-    image: safeglobal/safe-config-service:${CFG_VERSION}
+    image: shyft-cfg:1
     tty: true
     volumes:
       - nginx-shared-cfg:/nginx
@@ -145,7 +145,7 @@ services:
         condition: service_healthy
 
   ui:
-    image: safeglobal/safe-wallet-web:${UI_VERSION}
+    image: shyft-web:1
     env_file:
       - container_env_files/ui.env
     depends_on:
