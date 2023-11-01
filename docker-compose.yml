@@ -145,7 +145,7 @@ services:
         condition: service_healthy
 
   ui:
-    image: shyft-web:1
+    image: shyft-ui:3
     env_file:
       - container_env_files/ui.env
     depends_on:
