@@ -5,5 +5,8 @@ CFG_VERSION=latest
 CGW_VERSION=latest
 TXS_VERSION=latest
 UI_VERSION=latest
+EVENTS_VERSION=latest
+
+
 
 RPC_NODE_URL=https://rpc.testnet.shyft.network/
